@@ -77,5 +77,14 @@ for (let a = 0; a < listItems.length; a++) {
       e.preventDefault();
       list.style.backgroundColor = "limegreen";
     });
+
+    list.addEventListener("dragleave", () => {
+      list.style.backgroundColor = "rgba(88, 65, 83, 0.5)";
+    });
+
+    list.addEventListener("drop", () => {
+      list.append(draggedItem);
+      list.style.backgroundColor = "rgba(88, 65, 83, 0.5)";
+    });
   }
 }
