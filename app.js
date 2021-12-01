@@ -45,3 +45,24 @@
 // }
 
 // don't give up
+
+const lists = document.querySelectorAll(".list");
+const listItems = document.querySelectorAll(".list-item");
+
+let draggedItem = null;
+
+for (let a = 0; a < listItems.length; a++) {
+  const item = listItems[a];
+  item.addEventListener("dragstart", () => {
+    draggedItem = item;
+    setTimeout(() => {
+      item.style.display = "none";
+    }, 50);
+  });
+  item.addEventListener("dragend", () => {
+    setTimeout(() => {
+      item.style.display = "block";
+      draggedItem = null;
+    }, 50);
+  });
+}
