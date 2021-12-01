@@ -65,4 +65,17 @@ for (let a = 0; a < listItems.length; a++) {
       draggedItem = null;
     }, 50);
   });
+
+  for (let b = 0; b < lists.length; b++) {
+    const list = lists[b];
+
+    list.addEventListener("dragover", (e) => {
+      e.preventDefault();
+    });
+
+    list.addEventListener("dragenter", (e) => {
+      e.preventDefault();
+      list.style.backgroundColor = "limegreen";
+    });
+  }
 }
